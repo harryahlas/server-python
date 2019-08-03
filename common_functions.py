@@ -16,3 +16,14 @@ help(packagename)
 
 # Get current directory
 os.getcwd()
+
+
+# change directory
+ os.chdir()
+os.chdir("..")
+
+
+#read file
+f = open('directory/filename', "r")
+b = f.read()
+b
