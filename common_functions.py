@@ -27,3 +27,16 @@ os.chdir("..")
 f = open('directory/filename', "r")
 b = f.read()
 b
+
+
+#crontab 
+crontab -e
+cp filename newfilenameandlocation
+
+
+# PHP
+https://www.iplocate.io/api/lookup/2620:160:eb08::9
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
+echo $details->country; // -> "
