@@ -43,6 +43,10 @@ b2 = pd.read_csv("logs_archive/access20190731.log", header=None, delimiter=r"\s+
 #$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
 #echo $details->country; // -> "
 
+# Get list of files that match pattern .gz
+#path = '/usr/share/cups/charmaps'
+gz_files = [f for f in os.listdir("logs_archive") if f.endswith('.gz')]
+gz_files
 
 # Unzip old file and write to new file
 f = gzip.open('logs_archive/access.log.7.gz', 'rb')
