@@ -108,6 +108,18 @@ c.year
 #
 #import mysqlclient    
 import pymysql
+from sqlalchemy import create_engine
+
+
+
+
+
+# Turn dataframe into SQL table
+cnx = create_engine('mysql+pymysql://newuser:newuser@localhost/EDEMISE', echo=False)
+df.to_sql(name='sample_table2', con=cnx, if_exists = 'append', index=False)
+
+df2 = df.iloc[0:1,:]
+df2.to_sql('EDEMISELOG_TEMP', con)
 
 
 
@@ -119,11 +131,14 @@ con = pymysql.connect(host='localhost',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
+
+
 newfile = open("scripts/create_edemiselog.sql", "r")
 create_edemiselog_sql = newfile.read()
 newfile.close()
 create_edemiselog_sql 
 
+# 1 time create log table
 with con:
 
     cur = con.cursor()
@@ -134,6 +149,12 @@ with con:
     cur.execute("CREATE TABLE EARLYDEMISELOG (IP varchar(20), NULL1 int(1), NULL2 int(1), DATETIME1 varchar(50), DATETIME2 varchar(8), REQUEST TEXT, CODE1 INT(8), CODE2 INT(8), CODE3 INT(8), BROWSERTYPE varchar(255), CODE4 INT(8), CODE5 INT(8));")
 
 
+
+# generic
+with con:
+
+    cur = con.cursor()
+    #cur.execute("SELECT * FROM deskhistory")
 
     rows = cur.fetchall()
 
