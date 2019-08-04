@@ -47,6 +47,7 @@ b2 = pd.read_csv("logs_archive/access20190731.log", header=None, delimiter=r"\s+
 file_list = list()
 file_list[[1]] = b2
 
+f = gzip.open('logs_archive/access.log.7.gz', 'rb')
 
 
 # Get list of files that match pattern .gz
@@ -67,17 +68,37 @@ df = pd.DataFrame(columns=['IP',
                            'CODE2',
                            'CODE3'])
 
-
+i = 1
 # for each item in gz_files
 # import data
 # Unzip
-f = gzip.open('logs_archive/access.log.7.gz', 'rb')
+f = gzip.open('logs_archive/' + gz_files[i], 'rb')
+
+
+#
+#
+#
+#  START BELOW
+#
+
+
+import shutil
+with gzip.open('logs_archive/' + gz_files[i], 'rb') as f_in:
+    with open('logs_archive/gz_files' + str(i) + '.txt', 'wb') as f_out:
+        shutil.copyfileobj(f_in, f_out)
+
+df_temp2 = pd.read_csv('logs_archive/' + gz_files[i],
+                       compression='gzip', 
+                       header=None, 
+                       delimiter=r"\s+")
 
 # read in file
 file_content = f.read()
 
 # convert to data frame
-df_temp = pd.read_csv(file_content, header=None, delimiter=r"\s+")
+df_temp = pd.read_csv('logs_archive/gz_files' + str(i) + '.txt', header=None,
+                      quotechar='"', delimiter=r"\s+",
+                      error_bad_lines=False )
 
 # append to empty data frame
 df = df.append(df_temp)

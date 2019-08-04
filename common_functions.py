@@ -34,6 +34,15 @@ s = 'asdf=5;iwantthis123jasd'
 result = re.search('asdf=5;(.*)123jasd', s)
 print(result.group(1))
 
+# Get list of files that match pattern .gz
+#path = '/usr/share/cups/charmaps'
+import gzip
+gz_files = [f for f in os.listdir("logs_archive") if f.endswith('.gz')]
+gz_files
+f = gzip.open('logs_archive/access.log.7.gz', 'rb')
+
+
+
 #crontab 
 crontab -e
 cp filename newfilenameandlocation
