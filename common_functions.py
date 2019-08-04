@@ -28,6 +28,10 @@ f = open('directory/filename', "r")
 b = f.read()
 b
 
+
+# Change column names to match another pandas df
+b2.columns = df.columns
+
 # text replace
 import re
 s = 'asdf=5;iwantthis123jasd'
