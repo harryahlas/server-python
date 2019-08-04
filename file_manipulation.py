@@ -43,15 +43,47 @@ b2 = pd.read_csv("logs_archive/access20190731.log", header=None, delimiter=r"\s+
 #$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
 #echo $details->country; // -> "
 
+#not used
+file_list = list()
+file_list[[1]] = b2
+
+
+
 # Get list of files that match pattern .gz
 #path = '/usr/share/cups/charmaps'
 gz_files = [f for f in os.listdir("logs_archive") if f.endswith('.gz')]
 gz_files
 
-# Unzip old file and write to new file
+# create empty data frame
+df = pd.DataFrame(columns=['IP',
+                           'NULL1',
+                           'NULL2',
+                           'DATETIME1',
+                           'DATETIME2',
+                           'REQUEST',
+                           'CODE1',
+                           'NULL',
+                           'BROWSERTYPE',
+                           'CODE2',
+                           'CODE3'])
+
+
+# for each item in gz_files
+# import data
+# Unzip
 f = gzip.open('logs_archive/access.log.7.gz', 'rb')
+
+# read in file
 file_content = f.read()
-b2 = pd.read_csv(file_content, header=None, delimiter=r"\s+")
+
+# convert to data frame
+df_temp = pd.read_csv(file_content, header=None, delimiter=r"\s+")
+
+# append to empty data frame
+df = df.append(df_temp)
+
+
+
 
 newfile = open("logs_archive/access20190727bob.log", "w")
 encoding = 'utf-8'
@@ -61,3 +93,24 @@ newfile.close()
 
 f.close()
 ####### Rename old files
+# get names of files
+# pull number from file names
+import re
+
+before_num = "access.log."
+after_num = ".gz"
+
+i = 12
+days_difference = 10
+
+num_search = re.search('access.log.(.*).gz', gz_files[i])
+num_search = num_search.group(1)
+num_search = int(num_search)
+num_search 
+
+from datetime import datetime
+from datetime import date
+from datetime import timedelta
+
+StartDate = date(2019, 8, 3)
+StartDate  - timedelta(days=(num_search))

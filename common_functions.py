@@ -28,6 +28,11 @@ f = open('directory/filename', "r")
 b = f.read()
 b
 
+# text replace
+import re
+s = 'asdf=5;iwantthis123jasd'
+result = re.search('asdf=5;(.*)123jasd', s)
+print(result.group(1))
 
 #crontab 
 crontab -e
