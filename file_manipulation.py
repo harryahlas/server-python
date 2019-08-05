@@ -94,6 +94,12 @@ c.month
 c.day
 c.year
 
+
+# Get list of ips from archive
+# find country
+#create country_ip table
+
+## add yesterday's data
 # search for files that have yesterday's modification date
 # import data
 # add column names
