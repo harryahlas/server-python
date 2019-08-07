@@ -1,10 +1,26 @@
-create ip_country table
-	import initial_archive_table
-	keep only ip column
-	
-create main process to update ip_country
+first: #### Need to try for country and then if not get continent, if not then skip
 
-3 sources to update
-	archived 30 days
+create ip_country table
+	initial_archive_table
+		import initial_archive_table
+		keep only ip column as new df
 	most recent 7 or so days saved
-	ongoing daily
+		import 7 or so days saved (manual is ok)
+			use loop
+		keep only ip column as new df2
+	append first two tables to ip_country table
+	import geolite cities data using ip_addresses.py code
+	left join ip_country to geolite
+	write ip_country table via mysql
+Create new data table
+	Think of name for main table, maybe hits
+	append df and df2
+	write hits table
+Create main process for new data daily
+	search for any files dated yesterday
+	import them
+	save to temp table
+	append them to hits table
+Create view that joins data
+	Think about whether they need to update daily
+	
