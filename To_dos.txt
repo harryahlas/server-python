@@ -1,0 +1,10 @@
+create ip_country table
+	import initial_archive_table
+	keep only ip column
+	
+create main process to update ip_country
+
+3 sources to update
+	archived 30 days
+	most recent 7 or so days saved
+	ongoing daily

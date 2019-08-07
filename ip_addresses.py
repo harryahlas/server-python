@@ -25,13 +25,14 @@ import tarfile
 import maxminddb
 
 reader = maxminddb.open_database('GeoLite2-City_20190730/GeoLite2-City.mmdb')
-reader.get('70.36.251.205')
+reader.get('162.243.147.46')
 {'country': ... }
 
 reader.close()
 
+#### Need to try for country and then if not get continent, if not then skip
 i = 1343
-for i in range(1301,1350):#len(ips)):
+for i in range(1400,1700):#len(ips)):
     print(i)
     url_country = reader.get(ips.loc[i,'IP'])
-    ips.loc[i,'COUNTRY'] = url_country[0]['names']['en']
+    ips.loc[i,'COUNTRY'] = url_country[list(url_country)[0]]['names']['en']
