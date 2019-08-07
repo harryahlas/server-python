@@ -32,7 +32,40 @@ reader.close()
 
 #### Need to try for country and then if not get continent, if not then skip
 i = 1343
-for i in range(1400,1700):#len(ips)):
+for i in range(0,1782):#len(ips)):
     print(i)
     url_country = reader.get(ips.loc[i,'IP'])
-    ips.loc[i,'COUNTRY'] = url_country[list(url_country)[0]]['names']['en']
+
+    j = 0  
+    for x in url_country:
+      if x == "country":
+          #print(x)
+          #print(j)
+          j = j + 1
+          ips.loc[i,'COUNTRY'] = url_country[list(url_country)[j]]['names']['en']
+
+url_country[list(url_country)[0]]['names']['en']
+
+for x in url_country[list(url_country)[0]]:
+  print(x)
+
+
+  
+for x in url_country[list(url_country)]:
+  print(x)
+
+namelist = list()
+for x in url_country[list(url_country)[0]]:
+  list.append((x))
+  
+pd.DataFrame.from_dict(url_country).iloc(0,0)
+
+for x in url_country:
+  list.append((x))
+  print(x)
+url_country[0][0][0]
+
+url_country[[0]]
+
+if (y == "u"): 
+    print(y)
