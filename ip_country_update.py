@@ -46,10 +46,11 @@ ips = ips.reset_index() # needed because dropped duplicates are not in the index
 
 # Next run ip_addresses.py to get countries
 
-df_with_countries = df.set_index('IP').join(ips.set_index('IP'))
+df_with_countries = pd.merge(df, ips, on = 'IP', how = 'left')
+del df_with_countries['index'] #Remove index created by join
 
 # View Results
-df_with_countries.groupby('COUNTRY').count().sort_values(['index'])[['index']]
+df_with_countries.groupby('COUNTRY').count().sort_values(['TIMESTAMP'])['TIMESTAMP']
 
 
 # Save initial_archive_table
