@@ -1,5 +1,6 @@
 first: #### Need to try for country and then if not get continent, if not then skip
 
+COMBINE ALL INTO ONE
 create ip_country table
 	initial_archive_table
 		import initial_archive_table
@@ -19,6 +20,9 @@ Create new data table
 Create main process for new data daily
 	search for any files dated yesterday
 	import them
+	import ip_country table
+	see what new ips are not matching (antijoin)
+	add new ip/countries to file
 	save to temp table
 	append them to hits table
 Create view that joins data
