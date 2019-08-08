@@ -1,5 +1,4 @@
 
-Backup old data that wasn't backed (can rerun initial_setup_hits_and_ip_country.py)
 Create main process for new data daily
 	search for any files dated yesterday
 	import them
@@ -10,6 +9,14 @@ Create main process for new data daily
 	append them to hits table
 Create view that joins data
 	Think about whether they need to update daily
+
+updated comment text in initial_setup_hits_and_ip_country
+
+Decide if ip_countries can be eliminated. Seems useless.
+
+Backup old data that wasn't backed (can rerun initial_setup_hits_and_ip_country.py)
 	
 check if enough room to back up website!
 then back up!
+
+Then start analytics
