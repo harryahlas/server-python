@@ -1,14 +1,6 @@
+25788 on hits archive Wednesday night, should be more Thu 230 pm
 
-Create main process for new data daily
-	search for any files dated yesterday
-	import them
-	import ip_country table
-	see what new ips are not matching (antijoin)
-	add new ip/countries to file
-	save to temp table
-	append them to hits table
-Create view that joins data
-	Think about whether they need to update daily
+
 
 updated comment text in initial_setup_hits_and_ip_country
 
