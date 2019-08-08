@@ -12,3 +12,16 @@ check if enough room to back up website!
 then back up!
 
 Then start analytics
+
+#Pull hits by day
+with a as (
+select  
+DATETIME1, 
+	SUBSTRING(DATETIME1, 2, 2) AS DAY, 
+    SUBSTRING(DATETIME1, 5, 3) AS MONTH, 
+    SUBSTRING(DATETIME1, 9, 4) AS YEAR 
+    from `EDEMISE`.`hits_archive` ) 
+SELECT STR_TO_DATE(CONCAT(YEAR, MONTH, DAY), '%Y%b%d') AS HIT_DATE, 
+COUNT(*) AS HIT_COUNT
+FROM a
+GROUP BY STR_TO_DATE(CONCAT(YEAR, MONTH, DAY), '%Y%b%d');

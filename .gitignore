@@ -1,1 +1,5 @@
-logs_archive
+logs_archive/*
+GeoLite2-City_20190730/COPYRIGHT.txt
+GeoLite2-City_20190730/GeoLite2-City.mmdb
+GeoLite2-City_20190730/LICENSE.txt
+GeoLite2-City_20190730/README.txt
