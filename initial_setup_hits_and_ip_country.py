@@ -2,8 +2,8 @@
 """
 Created on Tue Aug  6 20:26:15 2019
 
-Run after gz_data_load.py
-
+Pulls
+.
 @author: Harry Ahlas
 """
 
@@ -39,7 +39,8 @@ file_list = list(['access20190729',
                   'access20190801',
                   'access20190802',
                   'access20190803',
-                  'access20190804'])
+                  'access20190804',
+                  'access20190805'])
 
 for file in file_list:
     print(file)
@@ -167,9 +168,9 @@ engine_text = str('mysql+pymysql://' + username + ':' + password + '@localhost/e
 cnx = create_engine(engine_text, echo=False)
 
 # Save hits_archive
-df_with_countries.to_sql(name='initial_archive_table', con=cnx, if_exists = 'replace', index=False)
+df_with_countries.to_sql(name='hits_archive', con=cnx, if_exists = 'replace', index=False)
 
-
-#### Create initial ip_countries table
+# Save ip_country
+ips.to_sql(name='ip_country', con=cnx, if_exists = 'replace', index=False)
 
 
