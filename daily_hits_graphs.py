@@ -60,6 +60,7 @@ x = [datetime.datetime(2010, 12, 1, 10, 0),
     datetime.datetime(2011, 5, 5, 9, 0)]
 y = [4, 9, 2]
 
+# Try plotly here
 ax = plt.subplot(111)
 ax.bar(x, y, width=1)
 ax.xaxis_date()

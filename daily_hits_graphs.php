@@ -2,7 +2,7 @@
 <body>
 <?php 
 
-$command = escapeshellcmd('/usr/custom/test.py');
+$command = escapeshellcmd('/home/edemise/daily_hits_graphs.py');
 $output = shell_exec($command);
 echo $output;
 
