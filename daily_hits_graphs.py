@@ -48,10 +48,11 @@ data = pd.read_sql(sql_hitcount_by_country_day, cnx)
 
 
 
+x = data['HIT_DATE']#.tolist()
+y = data['HIT_COUNT']#.tolist()
 
-
-import numpy as np
-import matplotlib.pyplot as plt
+#import numpy as np
+import matplotlib.pyplot as plt#
 import datetime
 
 x = [datetime.datetime(2010, 12, 1, 10, 0),
@@ -60,7 +61,9 @@ x = [datetime.datetime(2010, 12, 1, 10, 0),
 y = [4, 9, 2]
 
 ax = plt.subplot(111)
-ax.bar(x, y, width=10)
+ax.bar(x, y, width=1)
 ax.xaxis_date()
+plt.xticks(rotation=90)
+plt.savefig("public_html/sql_images/daily_hits.png")
 
 plt.show()
