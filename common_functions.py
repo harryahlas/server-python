@@ -12,7 +12,7 @@
 # python -m venv ~/.virtualenvs/my-env
 # source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
 # deactivate
-## From cmd
+## From cmd (<b>this worked best:</b> C:\Development\Python\virtual_environments>python -m venv spacytest) then C:\Development\Python\virtual_environments\spacytest\Scripts\activate.bat
 # C:\Development\Python\virtual_environments\testenv\Scripts\activate.bat
 ## From conda
 # conda create --name condaenv ## can add this argument as well: python=3.7.3
