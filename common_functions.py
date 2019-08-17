@@ -6,10 +6,13 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
-# Virtual env
+# Virtual env from powershell
 # python -m venv ~/.virtualenvs/my-env
 # source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
 # deactivate
+# From cmd
+# C:\Development\Python\virtual_environments\testenv\Scripts\activate.bat
+
 
 #list functions in module
 dir(os)
