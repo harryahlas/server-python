@@ -8,6 +8,8 @@
 
 # Virtual env
 # python -m venv ~/.virtualenvs/my-env
+# source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
+# deactivate
 
 #list functions in module
 dir(os)
