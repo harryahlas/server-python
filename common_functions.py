@@ -6,13 +6,18 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
-# Virtual env from powershell
+## Virtual env from powershell
 # python -m venv ~/.virtualenvs/my-env
 # source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
 # deactivate
-# From cmd
+## From cmd
 # C:\Development\Python\virtual_environments\testenv\Scripts\activate.bat
-
+## From conda
+# conda create --name condaenv
+# To activate this environment, use:
+# > activate condaenv
+# To deactivate this environment, use:
+# > deactivate condaenv
 
 #list functions in module
 dir(os)
