@@ -7,8 +7,8 @@
 # ~/.local/bin/pip install pandas --user
 
 ## Virtual env install: 
-[https://realpython.com/effective-python-environment/#virtual-environments](https://realpython.com/effective-python-environment/#virtual-environments)
-# from powershell
+[https://realpython.com/effective-python-environment](https://realpython.com/effective-python-environment/#virtual-environments)
+[https://realpython.com/python-windows-machine-learning-setup](https://realpython.com/python-windows-machine-learning-setup)# from powershell
 # python -m venv ~/.virtualenvs/my-env
 # source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
 # deactivate
