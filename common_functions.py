@@ -6,19 +6,22 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
-## Virtual env from powershell
+## Virtual env install: 
+[https://realpython.com/effective-python-environment/#virtual-environments](https://realpython.com/effective-python-environment/#virtual-environments)
+# from powershell
 # python -m venv ~/.virtualenvs/my-env
 # source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
 # deactivate
 ## From cmd
 # C:\Development\Python\virtual_environments\testenv\Scripts\activate.bat
 ## From conda
-# conda create --name condaenv
+# conda create --name condaenv ## can add this argument as well: python=3.7.3
 # To activate this environment, use:
 # > activate condaenv
 # To deactivate this environment, use:
 # > deactivate condaenv
-
+# install packages (in conda), create requirements.txt with package name and optional version, eg scipy==1.3.0 
+ 
 #list functions in module
 dir(os)
 
