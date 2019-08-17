@@ -6,6 +6,8 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
+# Virtual env
+# python -m venv ~/.virtualenvs/my-env
 
 #list functions in module
 dir(os)
