@@ -6,7 +6,22 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
-
+## Virtual env install: 
+[https://realpython.com/effective-python-environment](https://realpython.com/effective-python-environment/#virtual-environments)
+[https://realpython.com/python-windows-machine-learning-setup](https://realpython.com/python-windows-machine-learning-setup)# from powershell
+# python -m venv ~/.virtualenvs/my-env
+# source ~/.virtualenvs/my-env/bin/activate #may be in Scripts folder
+# deactivate
+## From cmd (<b>this worked best:</b> C:\Development\Python\virtual_environments>python -m venv spacytest) then C:\Development\Python\virtual_environments\spacytest\Scripts\activate.bat
+# C:\Development\Python\virtual_environments\testenv\Scripts\activate.bat
+## From conda
+# conda create --name condaenv ## can add this argument as well: python=3.7.3
+# To activate this environment, use:
+# > activate condaenv
+# To deactivate this environment, use:
+# > deactivate condaenv
+# install packages (in conda), create requirements.txt with package name and optional version, eg scipy==1.3.0 
+ 
 #list functions in module
 dir(os)
 
