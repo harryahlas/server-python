@@ -1,11 +1,3 @@
-25788 on hits archive Wednesday night, should be more Thu 230 pm
-
-
-
-updated comment text in initial_setup_hits_and_ip_country
-
-Decide if ip_countries can be eliminated. Seems useless.
-
 Backup old data that wasn't backed (can rerun initial_setup_hits_and_ip_country.py)
 	
 check if enough room to back up website!
@@ -14,14 +6,5 @@ then back up!
 Then start analytics
 
 #Pull hits by day
-with a as (
-select  
-DATETIME1, 
-	SUBSTRING(DATETIME1, 2, 2) AS DAY, 
-    SUBSTRING(DATETIME1, 5, 3) AS MONTH, 
-    SUBSTRING(DATETIME1, 9, 4) AS YEAR 
-    from `EDEMISE`.`hits_archive` ) 
-SELECT STR_TO_DATE(CONCAT(YEAR, MONTH, DAY), '%Y%b%d') AS HIT_DATE, 
-COUNT(*) AS HIT_COUNT
-FROM a
-GROUP BY STR_TO_DATE(CONCAT(YEAR, MONTH, DAY), '%Y%b%d');
+# Figure out a way to visualize
+# explore python packages, php viz, and js.
