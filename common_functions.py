@@ -6,6 +6,9 @@
 # install packages
 # ~/.local/bin/pip install pandas --user
 
+# language model downloads
+# C:\Users\Anyone>Anaconda3\python -m spacy download en_core_web_sm
+
 ## Virtual env install: 
 [https://realpython.com/effective-python-environment](https://realpython.com/effective-python-environment/#virtual-environments)
 [https://realpython.com/python-windows-machine-learning-setup](https://realpython.com/python-windows-machine-learning-setup)# from powershell
