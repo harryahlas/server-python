@@ -9,6 +9,9 @@ spark-shell
 cmd: jupyter notebook
 copy url
 
+This works:
+**pyspark+mysql+connection+attempt.ipynb**
+
 <code>import findspark
 findspark.init()
 import pyspark
