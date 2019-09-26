@@ -1,0 +1,37 @@
+DISREGARD? USE README INSTEAD?
+http://cf3bc450da71:8888/?token=bfe06e630293e02f340323702780926a623763c0507abf25
+
+To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+    Or copy and paste one of these URLs:
+        http://cf3bc450da71:8888/?token=bfe06e630293e02f340323702780926a623763c0507abf25
+     or http://127.0.0.1:8888/?token=bfe06e630293e02f340323702780926a623763c0507abf25
+	 
+shut off all sql programs
+opened docker, which took a while
+then ran docker run -it --rm -p 8888:8888 jupyter/pyspark-notebook in terminal
+
+192.168.99.100:2376/?token=37685130f4de5098de03546bb6a23da1f0bef1de6c94be86
+
+
+This worked
+https://www.knowledgehut.com/blog/big-data/how-to-install-apache-spark-on-windows
+spark-shell
+
+
+jupyter notebook
+copy url
+
+import findspark
+
+findspark.init()
+
+import pyspark
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+df = spark.sql("select 'spark' as hello ")
+
+df.show()
