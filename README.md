@@ -7,6 +7,7 @@ Scratch code for use with server
 spark-shell
 
 cmd: jupyter notebook
+run in IE
 copy url
 
 This works:
