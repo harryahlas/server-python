@@ -27,7 +27,7 @@
 
 # Create server:
 # From cmd: python -m http.server
-# Use your ipv4 address, which can be found by right clicking properties under your wireless connection                                                      
+# Use your ipv4 address, which can be found by right clicking properties under your wireless connection, along with ':8000',                                                      
                                                       
 #list functions in module
 dir(os)
