@@ -24,7 +24,11 @@
 # To deactivate this environment, use:
 # > deactivate condaenv
 # install packages (in conda), create requirements.txt with package name and optional version, eg scipy==1.3.0 
- 
+
+# Create server:
+# From cmd: python -m http.server
+# Use your ipv4 address, which can be found by right clicking properties under your wireless connection                                                      
+                                                      
 #list functions in module
 dir(os)
 
