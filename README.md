@@ -13,15 +13,20 @@ copy url
 This works:
 **pyspark+mysql+connection+attempt.ipynb**
 
-<code>import findspark
-findspark.init()
+<code>import findspark.init()
+
 import pyspark
+
 from pyspark.sql import SparkSession
+
 spark = SparkSession.builder.getOrCreate()
+
 df = spark.sql("select 'spark' as hello ")
+
 df.show()
 
 from pyspark.sql import SQLContext
+
 from pyspark import SparkContext
 
 sc = SparkContext.getOrCreate();
