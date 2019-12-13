@@ -12,7 +12,13 @@ copy url
 
 This works:
 **pyspark+mysql+connection+attempt.ipynb**
+Note: to restart mysql:
+          * Open Run Window by Winkey + R
+          * Type services.msc
+          * Search MySQL service based on version installed.
+          * Click stop, start or restart the service option.
 
+## Old
 <code>import findspark.init()
 
 import pyspark
