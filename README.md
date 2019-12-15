@@ -1,4 +1,4 @@
-# server-python
+jupyter# server-python
 Scratch code for use with server
 
 ## Spark on windows
@@ -11,6 +11,7 @@ run in IE
 copy url
 
 This works:
+start with: jupyter notebook C:\Development\github\server-python
 **pyspark+mysql+connection+attempt.ipynb**
 
 Note: to restart mysql:
