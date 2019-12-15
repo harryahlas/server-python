@@ -1,0 +1,259 @@
+https://www.windowscentral.com/how-install-linux-distros-windows-10
+
+1st - install ubuntu using windows store
+
+Skip to main content
+
+Ad Logo
+This Revolutionary Home And Renters Insurance Starts At Just $5 - Get Insured In 90 Seconds.
+Sign Up
+Ad by StackMedia  Hide Ad
+
+
+Watch UFC 245 Exclusively on ESPN+
+Catch Every Moment of UFC 245
+Experience UFC PPV events like never before with ESPN+ and save over 25%!
+
+Expand
+
+ 
+Search...
+Surface Pro X Surface Pro 7 Surface Laptop 3 Xbox One X Best VPN Services Best Antivirus Laptop Deals
+
+
+
+We may earn a commission for purchases using our links. Learn more.
+
+THE RIGHT WAY
+How to install Linux distros properly on Windows 10
+Are you getting errors installing Linux distros on Windows 10? In this guide, we'll tell you exactly what you need to do to fix this issue.
+MAURO HUCULAK
+31 Jul 2017
+ 13
+
+Starting with the Windows 10 Fall Creators Update, Microsoft is making some Linux distros, including Ubuntu, SUSE Linux Enterprise Server
+ADVERTISEMENT
+
+ 12, and OpenSUSE Leap 42 available in the Windows Store. Additionally, it's no longer a prerequisite to enable Developer mode, which makes the installation of Linux distros a lot easier.
+
+However, a number of users a seeing an error code 0x8007007e as they try to install any of the distros, but it's not a bug in the software. Instead, users are seeing this error because the Windows Subsystem for Linux (WSL), the compatibility layer to run Linux binary executables on Windows 10 is missing.
+
+In this Windows 10 guide, we'll walk you through the steps to successfully install Ubuntu, SUSE Linux Enterprise Server 12, and openSUSE Leap 42 on your device.
+
+Bundle Disney+, Hulu, and ESPN+ for just $13/month
+
+How to install Windows Subsystem for Linux
+Before you can install any version of Linux on Windows 10, you must install WSL using Control Panel.
+
+Open Settings.
+Click on Apps.
+Click on Apps & features.
+Under "Related settings," on the right side, click the Programs and Features link.
+
+
+Click the Turn Windows features on or off link.
+
+
+On "Windows Features," check the Windows Subsystem for Linux (Beta) option.
+
+in Ubuntu terminal: jupyter notebook --no-browser
+location is below:
+C:\Users\Anyone\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\newuser
+
+OLD BELOW
+
+
+
+Click OK.
+Click Restart now.
+After completing the steps, you can open the Windows Store to get the Linux distro you want to use.
+
+START HERE
+
+Installing Windows Subsystem for Linux using PowerShell
+If you prefer using the command line method, it's also possible to install the Windows Subsystem for Linux using PowerShell.
+
+Open Start.
+Search for PowerShell, right-click the result, and click Run as administrator.
+Type the following command to add the required module and press Enter:
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+Type Y to complete the installation and restart your computer.
+
+
+How to install Linux distros on Windows 10
+After adding the Windows System for Linux module to your computer, there are two ways to install Ubuntu or SUSE Linux distros on Windows 10: you can use Command Prompt or the Windows Store.
+
+Installing Linux distros using Command Prompt
+Open Start.
+Search for Command Prompt, right-click the result, and click Run as administrator.
+Type one of the following commands to install Ubuntu, SUSE Linux Enterprise Server 12, or openSUSE Leap 42 and press Enter:
+
+ubuntu
+sles-12
+opensuse-42
+As you execute the command, the required files will download and install automatically on your device. Then simply follow the on-screen directions to complete the setup.
+
+Installing Linux distros using Windows Store
+Perhaps an easier way to install Linux distros on Windows 10 is to use the Windows Store using the following links:
+
+Ubuntu
+SUSE Linux Enterprise Server 12
+openSUSE Leap 42
+Once the installation completes, launch the app, and complete the on-screen directions.
+
+Remember that you're not limited to install just one version of Linux. If you want, you can also install all three, including Fedora Linux when it becomes available in the Store, and run them all simultaneously.
+
+You can install Linux distros using the Store starting with the release of the Windows 10 Fall Creators Update. However, if you have a device enrolled in the Windows Insider Program running the latest test build for PC, you can try any of them immediately. Also, note that devices running the Windows 10 Creators Update only supports Ubuntu, which can be installed using these steps.
+
+More Windows 10 resources
+For more helpful articles, coverage, and answers to common questions about Windows 10, visit the following resources:
+
+Windows 10 on Windows Central – All you need to know
+Windows 10 help, tips, and tricks
+Windows 10 forums on Windows Central
+We may earn a commission for purchases using our links. Learn more.
+
+Xbox Series X: Everything you need to know 
+IT EATS MONSTERS FOR BREAKFAST
+Xbox Series X: Everything you need to know
+Here's everything you need to know about the next-generation Xbox console from Microsoft: Xbox Series X.
+
+My super mega lazy Xbox Game Streaming / Project XCloud set-up is amazing
+NEW LEVELS OF LAZINESS
+My super mega lazy Xbox Game Streaming / Project XCloud set-up is amazing
+Project XCloud is letting us take our Xbox gaming away from the TV. Here's the set up I'm currently using for maximum laziness.
+
+Should you still consider picking up Total War: Warhammer II in 2019?
+DEEP FANTASY STRATEGY
+Should you still consider picking up Total War: Warhammer II in 2019?
+Released in 2017, Total War: Warhammer II has seen a ton of extra content released, including the latest The Shadow & The Blade DLC. Is it worth trying out for a total newcomer to the series?
+
+These awesome Minecraft deals are perfect for the gamers in your life
+OMG A SALE
+These awesome Minecraft deals are perfect for the gamers in your life
+We've scoured the internet to find the best deals for all the Minecraft lovers in your life...even if that's just you. From consoles to toys, we have the deals.
+
+View Comments (13)
+Help & How To
+PureVPN's extended Cyber Monday sale nets you a subscription for $1 a month
+LAST CHANCE
+PureVPN's extended Cyber Monday sale nets you a subscription for $1 a month
+
+
+
+by TaboolaSponsored LinksYou May Like
+Mom Buys Ornament At Thrift Store, Looks Closer And Drops To Her Knees
+Top 5
+Play just 1 minute to find out why everyone loves this farm game!
+Taonga: the tropical farm
+You Should Never Shop on Amazon Without Using This Trick – Here’s Why
+Honey
+Where Sausalito photographers find new customers
+Thumbtack
+Two Boxes Of The Favorite Royal Riviera Pears
+$59.99 - harryanddavid.com
+PreSonus Studio 1810c USB-C 18x8 Audio/MIDI Interface
+$369.95 - musiciansfriend.com
+LEGO Star Wars Slave l – 20th Anniversary Edition 75243…
+$119.95 - Amazon.com
+$1,000 Cash Back on 2020 Camry
+Toyota
+
+We may earn a commission for purchases using our links. Learn more.
+
+FROM SACRIFICE TO SAGA
+Senua's Saga: Hellblade II — Everything we know so far, trailers, release date and news
+Pict and Norse warriors, giants and darkness.
+SAMUEL TOLBERT
+14 Dec 2019
+ 0
+Senua's Saga: Hellblade II
+Source: Xbox Game Studios
+At the Game Awards 2019, Phil Spencer surprised the world by announcing the next Xbox console and a new Ninja Theory game, Senua's Saga: Hellblade II. This is our first look at a true next-generation title. Technically, Halo Infinite gave us footage of a game running on next-generation Xbox hardware (or on a PC with ballpark specs) but Senua's Sacrifice: Hellblade II is the first Xbox Game Studios title explicitly being designed from the ground-up for the Xbox Series X.
+
+Senua's Saga: Hellblade II story
+Senua's Saga: Hellblade II gameplay and features
+Will Senua's Saga: Hellblade II be on Xbox One?
+When is the release date for Senua's Saga: Hellblade II?
+Senua's Saga: Hellblade II story
+In the first game, Senua went on a journey into Hel and confronted all sorts of mythical beasts and deities, including the fire giant Surt and the God of Illusion, Valravn. She also made peace with the "darkness" inside her, the voices Ninja Theory has explictly confirmed were designed around modern-day descriptions of psychosis. While we don't know much about the story of the sequel so far, it appears to be taking an even darker tone, delving into ideas of Pict and Nord rituals and sacrifice.
+
+
+Bundle Disney+, Hulu, and ESPN+ for just $13/month
+
+Whatever the story ends up dealing with, Ninja Theory is consulting mental health professionals as part of The Insight Project, developing games around understanding mental illness. You can check out the reveal trailer from the Game Awards below.
+
+
+Senua's Saga: Hellblade II gameplay and features
+Hellblade: Senua's Sacrifice was a third-person game with combat and puzzles. We have every reason to expect that the sequel will be very similar however, it likely has a far larger budget, which could mean more complicated combat, bigger setpieces and a larger game. Here's what we know right now.
+
+This is a different team at Ninja Theory than the one under Rahni Tucker developing Bleeding Edge.
+Melina Juergens is reprising her role as Senua, providing some truly incredible performance capture.
+Footage for the trailer was captured in-engine.
+The game is likely running on Unreal Engine 4.
+Ninja Theory is working with the band Heilung for the soundtrack.
+Heilung's music can be heard in the reveal trailer for the game, the song is called In Maidjan.
+
+Melina Juergens
+@JuergensMelina
+Phewww..News is finally out: Hellblade 2 Senua’s Saga is officially in the making! ⚔️ Thanks to “Heilung” for allowing me to perform your song 💓 And thanks to our amazing Team at @NinjaTheory and everyone else who was involved in making this Trailer happen 🙏 #Hellblade2
+
+2,104
+4:16 PM - Dec 13, 2019
+Twitter Ads info and privacy
+431 people are talking about this
+
+NinjaTheory
+✔
+@NinjaTheory
+We are proud to announce that we will be collaborating with the incredibly talented #Heilung on the Senua’s Saga: #Hellblade II Soundtrack!
+
+View image on Twitter
+3,071
+7:09 PM - Dec 12, 2019
+Twitter Ads info and privacy
+598 people are talking about this
+Will Senua's Saga: Hellblade II be on Xbox One?
+When Phil Spencer presented the Xbox Series X at the Game Awards 2019, right before the trailer Senua's Saga: Hellblade II, he noted that the game being shown was early in development for the Xbox Series X, although we're unsure if that means it won't be coming to the original console. We've reached out to Microsoft for a comment.
+
+The official press release and all the marketing materials only mention the Xbox Series X. It will certainly come to PC though, as all Xbox Game Studios titles arrive on PC as well.
+
+When is the release date for Senua's Saga: Hellblade II?
+There's no release date right now, or even a release window. At the Game Awards 2019, Phil Spencer noted that the title was early in development, so you shouldn't expect it as a launch title for Xbox Series X, or even shortly after launch. We'll be sure to provide updates on any official release date as soon as that information is available.
+
+Best of the best
+Xbox Game Pass Ultimate
+Xbox Game Pass and Xbox Live Gold in one
+
+Xbox Game Pass gives you access to over a hundred games for one monthly fee. Xbox Game Pass Ultimate also adds Xbox Live Gold to the package so you can play online with your friends.
+
+$45 at Amazon
+$45 at Best Buy
+Xbox Series X
+
+Xbox Series X: Everything we know
+List of Xbox Series X specs
+What is the Xbox Series X release date?
+How much does Xbox Series X cost?
+Why you can't preorder Xbox Series X yet
+We may earn a commission for purchases using our links. Learn more.
+
+View Comments (0)
+Games Hellblade
+PureVPN's extended Cyber Monday sale nets you a subscription for $1 a month
+LAST CHANCE
+PureVPN's extended Cyber Monday sale nets you a subscription for $1 a month
+
+
+
+
+
+ Log in or Sign up
+BRIGHTNESS
+Dark Mode
+Tip us on news!
+Mobile Nations
+500M Consumers Reached Yearly
+Copyright 2019 Mobile Nations Terms and Conditions Privacy Policy Your Ad Choices Careers Licensing External Links Disclosure Accessibility Statement
