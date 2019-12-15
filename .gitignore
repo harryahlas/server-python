@@ -4,3 +4,4 @@ GeoLite2-City_20190730/GeoLite2-City.mmdb
 GeoLite2-City_20190730/LICENSE.txt
 GeoLite2-City_20190730/README.txt
 logs/access.log.1
+.ipynb_checkpoints/pyspark+mysql+connection+attempt-checkpoint.ipynb
