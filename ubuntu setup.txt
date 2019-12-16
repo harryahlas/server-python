@@ -60,8 +60,19 @@ in Ubuntu terminal: jupyter notebook --no-browser
 location is below:
 C:\Users\Anyone\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\newuser
 
-OLD BELOW
+Tried: export SPARK_HOME=/mnt/c/Users/Spark/
+or this: findspark.init('/mnt/c/Users/Spark/')
 
+Ran this in ubuntu:
+	sudo apt-get install software-properties-common
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+Maybe needed:
+export JAVA_HOME=/mnt/c/ProgramData/Oracle/Java/javapath 
+
+OLD BELOW
+###################################################################
+-----------------------------------------------------------------------------------------
 
 
 Click OK.
