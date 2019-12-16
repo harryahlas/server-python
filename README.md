@@ -50,3 +50,4 @@ source_df = sqlContext.read.format('jdbc').options(
           password='newuser').load()
 </code>
 
+* next: multiple nodes: https://www.davidadrian.cc/posts/2017/08/how-to-spark-cluster/
