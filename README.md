@@ -20,6 +20,8 @@ Note: to restart mysql:
 * Search MySQL service based on version installed.
 * Click stop, start or restart the service option.
 
+**Next** (https://www.tutorialkart.com/apache-spark/how-to-setup-an-apache-spark-cluster/)[https://www.tutorialkart.com/apache-spark/how-to-setup-an-apache-spark-cluster/]
+
 ## Old
 <code>import findspark.init()
 
