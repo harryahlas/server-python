@@ -27,10 +27,12 @@ Run ubuntu as administrator
 chmod 755 -R /mnt/c/Users/Spark/logs
 cd /mnt/c/Users/Spark/sbin
 *these may have worked, not sure*
+* added SPARK_LOCAL_IP="127.0.0.1" and SPARK_MASTER_HOST='127.0.0.1' to spark-env.sh.  Can go anywhere in file I believe.  Need to test if this will work when using slave machine.
 * sudo hostname -s 127.0.0.1 
 * export LD_LIBRARY_PATH="$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH"
 * export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native 
-./start-master.sh --master "spark://hostname:7077"
+./start-master.sh
+./stop-master.sh
 
 
 ## Old
