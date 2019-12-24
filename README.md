@@ -37,9 +37,7 @@ cd /mnt/c/Users/Spark/sbin
 Works in jupyter from ubuntu: (from (https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/)[https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/])
 
 <code>from pyspark import SparkConf, SparkContext
-
 conf = SparkConf().setMaster("local").setAppName("My App")
-
 sc = SparkContext(conf = conf)</code>
 
 
