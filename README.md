@@ -26,6 +26,10 @@ edit spark-env.sh
 Run ubuntu as administrator
 chmod 755 -R /mnt/c/Users/Spark/logs
 cd /mnt/c/Users/Spark/sbin
+*these may have worked, not sure*
+* sudo hostname -s 127.0.0.1 
+* export LD_LIBRARY_PATH="$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH"
+* export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native 
 ./start-master.sh --master "spark://hostname:7077"
 
 
