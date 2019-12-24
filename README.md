@@ -35,9 +35,10 @@ cd /mnt/c/Users/Spark/sbin
 ./stop-master.sh
 
 Works in jupyter from ubuntu: (from (https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/)[https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/])
-<python>from pyspark import SparkConf, SparkContext
+
+<code>from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster("local").setAppName("My App")
-sc = SparkContext(conf = conf)</python>
+sc = SparkContext(conf = conf)</code>
 
 
 ## Old
