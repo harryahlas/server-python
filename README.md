@@ -34,6 +34,11 @@ cd /mnt/c/Users/Spark/sbin
 ./start-master.sh
 ./stop-master.sh
 
+Untested:
+from pyspark import SparkConf, SparkContext
+conf = SparkConf().setMaster("local").setAppName("My App")
+sc = SparkContext(conf = conf)
+
 
 ## Old
 <code>import findspark.init()
