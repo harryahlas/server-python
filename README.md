@@ -22,6 +22,13 @@ Note: to restart mysql:
 
 **Next** (https://www.tutorialkart.com/apache-spark/how-to-setup-an-apache-spark-cluster/)[https://www.tutorialkart.com/apache-spark/how-to-setup-an-apache-spark-cluster/]
 
+edit spark-env.sh
+Run ubuntu as administrator
+chmod 755 -R /mnt/c/Users/Spark/logs
+cd /mnt/c/Users/Spark/sbin
+./start-master.sh
+
+
 ## Old
 <code>import findspark.init()
 
