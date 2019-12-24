@@ -26,7 +26,7 @@ edit spark-env.sh
 Run ubuntu as administrator
 chmod 755 -R /mnt/c/Users/Spark/logs
 cd /mnt/c/Users/Spark/sbin
-./start-master.sh
+./start-master.sh --master "spark://hostname:7077"
 
 
 ## Old
