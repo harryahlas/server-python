@@ -34,6 +34,16 @@ cd /mnt/c/Users/Spark/sbin
 ./start-master.sh
 ./stop-master.sh
 
+Cluster steps
+* on master, update spark-env.sh 
+	* SPARK_MASTER_HOST='192.168.42.72'
+* on master, in ubuntu: 
+	* cd /mnt/c/Users/Spark/sbin
+	* spark-class org.apache.spark.deploy.master.Master
+* on slave, spark-class org.apache.spark.deploy.worker.Worker spark://192.168.42.72:7077
+* on master open http://127.0.0.1:8080/ in browser
+
+
 Works in jupyter from ubuntu: (from (https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/)[https://intellipaat.com/blog/tutorial/spark-tutorial/downloading-spark-and-getting-started/])
 
 <code>from pyspark import SparkConf, SparkContext
