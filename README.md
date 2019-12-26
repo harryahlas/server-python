@@ -34,6 +34,9 @@ cd /mnt/c/Users/Spark/sbin
 ./start-master.sh
 ./stop-master.sh
 
+NOTE---------------------------
+**removed C:\Users\Anyone\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\jvm\java-11-openjdk-amd64 **
+
 Cluster steps
 * on master, update spark-env.sh 
 	* SPARK_MASTER_HOST='192.168.42.72'
