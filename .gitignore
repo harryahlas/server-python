@@ -7,3 +7,4 @@ logs/access.log.1
 .ipynb_checkpoints/pyspark+mysql+connection+attempt-checkpoint.ipynb
 .ipynb_checkpoints/pyspark+mysql+connection+attempt+ubuntu-checkpoint.ipynb
 my_db.sqlite3
+.ipynb_checkpoints/run_spark_job_in_python-checkpoint.ipynb
