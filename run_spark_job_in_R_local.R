@@ -1,5 +1,6 @@
 #devtools::install_github("rstudio/sparklyr")
 library(sparklyr)
+library(dplyr)
 
 # Local
 #sc <- spark_connect(master = "local")
@@ -12,7 +13,18 @@ sc <- spark_connect(master = "local", app_name = "Harry")
 # sc <- spark_connect(master = "spark://192.168.42.72:7077", app_name = "Harry2")
 # sc <- spark_connect(master = "spark://192.168.42.80:7077", app_name = "Harry", version = "2.4.4")
 connection_is_open(sc)
-library(dplyr)
+
+starttime <- Sys.time()
+sdf_len(sc, 5, repartition = 1) %>%
+  spark_apply(function(e) I(e))
+Sys.time()-starttime
+
+starttime <- Sys.time()
+sdf_len(sc, 200, repartition = 1) %>%
+  spark_apply(function(e) I(e))
+Sys.time()-starttime
+
+
 cars <- copy_to(sc, mtcars[1:3])
 spark_mtcars <- sdf_copy_to(sc, mtcars, "my_mtcars")
 iris_tbl <- copy_to(sc, iris, overwrite = T)
