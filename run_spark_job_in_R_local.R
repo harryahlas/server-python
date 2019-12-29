@@ -31,6 +31,7 @@ summarize_all(cars, mean)
 summarize_all(cars, mean) %>%
   show_query()
 
+# from https://therinspark.com/analysis.html
 cars %>% 
   group_by(am) %>% 
   summarize_all(mean) %>% 
@@ -40,6 +41,28 @@ cars %>%
 cars %>% 
   summarize(mpg_percentile = percentile(mpg, array(.25, .5,.75))) %>% 
   mutate(mpg_percentile = explode(mpg_percentile))
+
+#In the background, the correlate() function runs sparklyr::ml_corr()
+library(corrr)
+correlate(cars, use = "pairwise.complete.obs", method = "pearson") 
+
+correlate(cars, use = "pairwise.complete.obs", method = "pearson") %>%
+  shave() %>%
+  rplot()
+
+
+library(ggplot2)
+# not run on spark
+ggplot(aes(as.factor(cyl), mpg), data = mtcars) + geom_col()
+
+# does run on spark
+cars %>%
+  group_by(cyl) %>%
+  summarise(mpg = sum(mpg, na.rm = TRUE)) %>%
+  collect() %>%
+  ggplot(aes(as.factor(cyl), mpg)) + 
+  geom_col(fill = "#999999") + coord_flip()
+
 
 spark_mtcars <- sdf_copy_to(sc, mtcars, "my_mtcars")
 iris_tbl <- copy_to(sc, iris, overwrite = T)
