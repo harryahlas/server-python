@@ -4,9 +4,11 @@ library(sparklyr)
 # Local
 #sc <- spark_connect(master = "local")
 
-sc <- spark_connect(master = "spark://127.0.0.1:7077", app_name = "Harry", spark_home = "C:/Users/Spark")
+Sys.setenv("SPARK_HOME" = "C:\\Users\\Spark")
 sc <- spark_connect(master = "local", app_name = "Harry")
 
+
+sc <- spark_connect(master = "spark://127.0.0.1:7077", app_name = "Harry", spark_home = "C:/Users/Spark")
 sc <- spark_connect(master = "spark://192.168.42.72:7077", app_name = "Harry2")
 sc <- spark_connect(master = "spark://192.168.42.80:7077", app_name = "Harry", version = "2.4.4")
 connection_is_open(sc)

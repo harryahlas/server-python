@@ -36,7 +36,8 @@ cd /mnt/c/Users/Spark/sbin
 
 NOTE---------------------------
 **removed C:\Users\Anyone\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\jvm\java-11-openjdk-amd64 **
-
+** updated spark-defaults.conf from 5g to spark.driver.memory              1000g (in conf folder?)**
+** added C:\opt\spark\spark-2.4.3-bin-hadoop2.7 to SPARK_HOME**
 Cluster steps
 * on master, update spark-env.sh 
 	* SPARK_MASTER_HOST='192.168.42.72'
