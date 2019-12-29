@@ -19,13 +19,28 @@ sdf_len(sc, 5, repartition = 1) %>%
   spark_apply(function(e) I(e))
 Sys.time()-starttime
 
+
 starttime <- Sys.time()
 sdf_len(sc, 200, repartition = 1) %>%
   spark_apply(function(e) I(e))
 Sys.time()-starttime
 
 
-cars <- copy_to(sc, mtcars[1:3])
+cars <- copy_to(sc, mtcars)
+summarize_all(cars, mean) 
+summarize_all(cars, mean) %>%
+  show_query()
+
+cars %>% 
+  group_by(am) %>% 
+  summarize_all(mean) %>% 
+  show_query()
+
+#explode list
+cars %>% 
+  summarize(mpg_percentile = percentile(mpg, array(.25, .5,.75))) %>% 
+  mutate(mpg_percentile = explode(mpg_percentile))
+
 spark_mtcars <- sdf_copy_to(sc, mtcars, "my_mtcars")
 iris_tbl <- copy_to(sc, iris, overwrite = T)
 flights_tbl <- copy_to(sc, nycflights13::flights, "flights")
