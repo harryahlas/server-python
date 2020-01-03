@@ -5,9 +5,8 @@ Refer to README.md for details
 * Ubuntu
 	* Open Ubuntu as administrator
 	* if needed, <code>chmod 755 -R /mnt/c/Users/Spark/logs</code>
-	* <code>cd /mnt/c/Users/Spark/sbin</code>
-	* <code>./start-master.sh</code>
-	* if it fails, run <code>./stop-master.sh</code> then go back to above step
+	* <code>/mnt/c/Users/Spark/sbin/start-master.sh</code>
+	* if it fails, run <code>/mnt/c/Users/Spark/sbin/stop-master.sh</code> then go back to above step
 * Browser
 	* visit http://127.0.0.1:8080/
 
@@ -18,5 +17,5 @@ Refer to README.md for details
 
 ## Master
 * Ubuntu
-	* <code>./stop-master.sh</code>
+	* <code>/mnt/c/Users/Spark/sbin/stop-master.sh</code>
 
