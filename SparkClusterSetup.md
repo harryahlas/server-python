@@ -1,11 +1,12 @@
 # Spark Cluster Setup
+Refer to README.md for details
 
 ## Master
 * Ubuntu
 	* Open Ubuntu as administrator
 	* (if needed) chmod 755 -R /mnt/c/Users/Spark/logs
-	* cd /mnt/c/Users/Spark/sbin
-	* ./start-master.sh
+	* <code>cd /mnt/c/Users/Spark/sbin</code>
+	* <code>./start-master.sh</code>
 	* if it fails, run ./stop-master.sh then go back to above step
 * Browser
 	* visit http://127.0.0.1:8080/
@@ -16,5 +17,5 @@
 
 ## Master
 * Ubuntu
-	* ./stop-master.sh
+	* <code>./stop-master.sh</code>
 
