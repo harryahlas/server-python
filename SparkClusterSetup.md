@@ -13,7 +13,8 @@ Refer to README.md for details
 
 ## Slave
 * cmd: <code>spark-class org.apache.spark.deploy.worker.Worker spark://192.168.42.72:7077</code>
-* R: 
+* R: run run_spark_job_in_R.R
+	* use ip that is on top left of browser on master
 
 ## Master
 * Ubuntu
