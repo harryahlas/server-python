@@ -14,6 +14,7 @@ Refer to README.md for details
 * cmd: <code>spark-class org.apache.spark.deploy.worker.Worker spark://192.168.42.72:7077</code>
 * R: run run_spark_job_in_R.R
 	* use ip that is on top left of browser on master
+* Can check jobs using something like: <code>http://192.168.42.86:4040/storage/</code>
 
 ## Master
 * Ubuntu
