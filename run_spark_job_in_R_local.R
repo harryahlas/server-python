@@ -169,3 +169,27 @@ prop_data %>%
                 width = .1) +
   geom_hline(yintercept = sum(prop_data$prop * prop_data$count) /
                sum(prop_data$count))
+
+contingency_tbl <- okc_train %>% 
+  sdf_crosstab("drinks", "drugs") %>%
+  collect()
+
+contingency_tbl
+
+library(ggmosaic)
+library(forcats)
+library(tidyr)
+
+contingency_tbl %>%
+  rename(drinks = drinks_drugs) %>%
+  gather("drugs", "count", missing:sometimes) %>%
+  mutate(
+    drinks = as_factor(drinks) %>% 
+      fct_relevel("missing", "not at all", "rarely", "socially", 
+                  "very often", "desperately"),
+    drugs = as_factor(drugs) %>%
+      fct_relevel("missing", "never", "sometimes", "often")
+  ) %>%
+  ggplot() +
+  geom_mosaic(aes(x = product(drinks, drugs), fill = drinks, 
+                  weight = count))
