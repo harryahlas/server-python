@@ -5,13 +5,14 @@ library(dplyr)
 # Local
 #sc <- spark_connect(master = "local")
 
-Sys.setenv("SPARK_HOME" = "C:\\Users\\Spark") #try without, error added ';'
+#Sys.setenv("SPARK_HOME" = "C:\\Users\\Spark") #try without, error added ';'
 sc <- spark_connect(master = "local", app_name = "Harry")
 
 # 
 # sc <- spark_connect(master = "spark://127.0.0.1:7077", app_name = "Harry", spark_home = "C:/Users/Spark")
 # sc <- spark_connect(master = "spark://192.168.42.72:7077", app_name = "Harry2")
 # sc <- spark_connect(master = "spark://192.168.42.80:7077", app_name = "Harry", version = "2.4.4")
+spark_web(sc)
 connection_is_open(sc)
 
 starttime <- Sys.time()
@@ -25,14 +26,23 @@ sdf_len(sc, 200, repartition = 1) %>%
   spark_apply(function(e) I(e))
 Sys.time()-starttime
 
+summarize_all(spark_mtcars, mean) 
 
-cars <- copy_to(sc, mtcars)
-summarize_all(cars, mean) 
+carsx <- copy_to(sc, mtcars)
+summarize_all(carsx, mean) 
 summarize_all(cars, mean) %>%
   show_query()
 
+testdf <- copy_to(sc, tibble(x=1,y=2))
+summarize_all(testdf, mean) 
+
+testdf2 <- copy_to(sc, tibble(x=1,y=2))
+
+
+
+
 # from https://therinspark.com/analysis.html
-cars %>% 
+carsx %>% 
   group_by(am) %>% 
   summarize_all(mean) %>% 
   show_query()
@@ -75,3 +85,87 @@ spark_disconnect(sc)
 
 library(SparkR, lib.loc = "C:\\Users\\Spark\\R\\lib")
 sc <- sparkR.session(master = "spark://121.0.0.1:7077")
+
+
+
+# Retrieve the Spark installation directory
+spark_home <- spark_home_dir()
+
+# Build paths and classes
+spark_path <- "C:\\Users\\Spark\\bin\\spark-class"#file.path(spark_home, "bin", "spark-class")
+
+# Start cluster manager master node
+system2(spark_path, "org.apache.spark.deploy.master.Master", wait = FALSE)
+
+# Start worker node, find master URL at http://localhost:8080/
+system2(spark_path, c("org.apache.spark.deploy.worker.Worker",
+                      #"spark://192.168.99.1:7077"), wait = FALSE)
+                      "spark://121.0.0.1:7077"), wait = FALSE)
+
+
+# From https://therinspark.com/modeling.html#exploratory-data-analysis
+download.file(
+  "https://github.com/r-spark/okcupid/raw/master/profiles.csv.zip",
+  "okcupid.zip")
+unzip("okcupid.zip", exdir = "data")
+unlink("okcupid.zip")
+profiles <- read.csv("data/profiles.csv")
+write.csv(dplyr::sample_n(profiles, 10^3),
+          "data/profiles.csv", row.names = FALSE)
+okc <- spark_read_csv(
+  sc, 
+  "data/profiles.csv", 
+  escape = "\"", 
+  memory = FALSE,
+  options = list(multiline = TRUE)
+) %>%
+  mutate(
+    height = as.numeric(height),
+    income = ifelse(income == "-1", NA, as.numeric(income))
+  ) %>%
+  mutate(sex = ifelse(is.na(sex), "missing", sex)) %>%
+  mutate(drinks = ifelse(is.na(drinks), "missing", drinks)) %>%
+  mutate(drugs = ifelse(is.na(drugs), "missing", drugs)) %>%
+  mutate(job = ifelse(is.na(job), "missing", job))
+
+okc <- okc %>%
+  mutate(
+    not_working = ifelse(job %in% c("student", "unemployed", "retired"), 1 , 0)
+  )
+
+okc %>% 
+  group_by(not_working) %>% 
+  tally()
+
+data_splits <- okc %>% 
+  sdf_random_split(train = .8, test = .2, seed = 42)
+okc_train <- data_splits$train
+okc_test <- data_splits$test
+
+sdf_describe(okc_train, cols = c("age", "income"))
+
+library(ggplot2)
+library(dbplot)
+
+dbplot_histogram(okc_train, age)
+
+prop_data <- okc_train %>%
+  mutate(religion = regexp_extract(religion, "^\\\\w+", 0)) %>% 
+  group_by(religion, not_working) %>%
+  tally() %>%
+  group_by(religion) %>%
+  summarize(
+    count = sum(n),
+    prop = sum(not_working * n) / sum(n)
+  ) %>%
+  mutate(se = sqrt(prop * (1 - prop) / count)) %>%
+  collect()
+
+prop_data
+
+prop_data %>%
+  ggplot(aes(x = religion, y = prop)) + geom_point(size = 2) +
+  geom_errorbar(aes(ymin = prop - 1.96 * se, ymax = prop + 1.96 * se),
+                width = .1) +
+  geom_hline(yintercept = sum(prop_data$prop * prop_data$count) /
+               sum(prop_data$count))
