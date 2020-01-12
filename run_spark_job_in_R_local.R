@@ -241,4 +241,5 @@ dbplot_histogram(okc_train, scaled_age)
 
 okc_train %>%
   group_by(ethnicity) %>%
-  tally()
+  tally() %>% 
+  arrange(desc(n))
