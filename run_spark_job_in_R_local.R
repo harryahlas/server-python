@@ -193,3 +193,52 @@ contingency_tbl %>%
   ggplot() +
   geom_mosaic(aes(x = product(drinks, drugs), fill = drinks, 
                   weight = count))
+
+library(FactoMineR)
+dd_obj <- contingency_tbl %>% 
+  tibble::column_to_rownames(var = "drinks_drugs") %>%
+  FactoMineR::CA(graph = FALSE)
+
+dd_drugs <-
+  dd_obj$row$coord %>%
+  as.data.frame() %>%
+  mutate(
+    label = gsub("_", " ", rownames(dd_obj$row$coord)),
+    Variable = "Drugs"
+  )
+
+dd_drinks <-
+  dd_obj$col$coord %>%
+  as.data.frame() %>%
+  mutate(
+    label = gsub("_", " ", rownames(dd_obj$col$coord)),
+    Variable = "Alcohol"
+  )
+
+ca_coord <- rbind(dd_drugs, dd_drinks)
+
+ggplot(ca_coord, aes(x = `Dim 1`, y = `Dim 2`, 
+                     col = Variable)) +
+  geom_vline(xintercept = 0) +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(label = label)) +
+  coord_equal()
+
+scale_values <- okc_train %>%
+  summarize(
+    mean_age = mean(age),
+    sd_age = sd(age)
+  ) %>%
+  collect()
+
+scale_values
+
+okc_train <- okc_train %>%
+  mutate(scaled_age = (age - !!scale_values$mean_age) /
+           !!scale_values$sd_age)
+
+dbplot_histogram(okc_train, scaled_age)
+
+okc_train %>%
+  group_by(ethnicity) %>%
+  tally()
