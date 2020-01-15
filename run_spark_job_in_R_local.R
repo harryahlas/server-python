@@ -243,3 +243,17 @@ okc_train %>%
   group_by(ethnicity) %>%
   tally() %>% 
   arrange(desc(n))
+
+
+ethnicities <- c("asian", "middle eastern", "black", "native american", "indian", 
+                 "pacific islander", "hispanic / latin", "white", "other")
+ethnicity_vars <- ethnicities %>% 
+  purrr::map(~ expr(ifelse(like(ethnicity, !!.x), 1, 0))) %>%
+  purrr::set_names(paste0("ethnicity_", gsub("\\s|/", "", ethnicities)))
+okc_train <- mutate(okc_train, !!!ethnicity_vars)
+okc_train %>% 
+  select(starts_with("ethnicity_")) %>%
+  glimpse()
+
+ethnicities %>% 
+  purrr::map(~ expr(ifelse(!like(ethnicity, !!.x), 1, 0)))
